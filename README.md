@@ -1,2 +1,2 @@
-# Mmdetection常用命令语句
+# 1.Mmdetection常用命令语句
 # 
