@@ -14,7 +14,7 @@
 
 2.使用coco 评估标准计算所有类别 bbox_mAP50, 75, 95, bbox_mAP_s/m/l的值可以通过以下两种语句
 
-（1）直接运行CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth  --eval bbox
+（1）直接运行**CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth  --eval bbox**即可得到相应指标结果
 
 （2）**CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/ssd/ssdlite_mobilenetv2_scratch_600e_coco.py work_dirs/ssd/epoch_120.pth --out results.pkl**
 
