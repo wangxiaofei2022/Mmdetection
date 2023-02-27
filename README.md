@@ -20,6 +20,6 @@
 
 生成results.pkl文件，生成的results.pkl文件在/data/wangxiaofei/mmdetection1/下
 
-使用上述得到的 results.pkl 文件
+使用上述得到的 results.pkl 文件在运行下列语句即可得到检测结果
 
 **CUDA_VISIBLE_DEVICES=4 python tools/analysis_tools/eval_metric.py --config configs/ssd/ssdlite_mobilenetv2_scratch_600e_coco.py --pkl_results results.pkl --eval bbox**
