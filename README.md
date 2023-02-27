@@ -11,4 +11,15 @@
 ## 1.批量检测图片的过程 
 
 （1） 将多张图片和对应的含所有标签信息的instances_val2017.json文件分别放到mmdetection1/data/coco/val2017/和mmdetection1/data/coco/annotations/
-（2）
+
+（2）使用coco 评估标准计算所有类别 bbox_mAP50, 75, 95, bbox_mAP_s/m/l的值可以通过以下两种语句
+
+（2.1）直接运行CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth  --eval bbox
+
+（2.2）**CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/ssd/ssdlite_mobilenetv2_scratch_600e_coco.py work_dirs/ssd/epoch_120.pth --out results.pkl**
+
+生成results.pkl文件，生成的results.pkl文件在/data/wangxiaofei/mmdetection1/下
+
+使用上述得到的 results.pkl 文件
+
+**CUDA_VISIBLE_DEVICES=4 python tools/analysis_tools/eval_metric.py --config configs/ssd/ssdlite_mobilenetv2_scratch_600e_coco.py --pkl_results results.pkl --eval bbox**
