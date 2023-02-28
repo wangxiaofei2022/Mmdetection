@@ -43,11 +43,10 @@
 
 4.  关于分析日志的工具（暂未测试）
 
-python tools/analyze_logs.py plot_curve [--keys ${KEYS}] [--title ${TITLE}] [--legend ${LEGEND}] [--backend ${BACKEND}] [--style ${STYLE}] [--out ${OUT_FILE}]
-
-- keys: 要展示的关键字
-- title: 图的标题
-- legend: 指定图例
+    python tools/analyze_logs.py plot_curve [--keys ${KEYS}] [--title ${TITLE}] [--legend ${LEGEND}] [--backend ${BACKEND}] [--style ${STYLE}] [--out ${OUT_FILE}]
+    - keys: 要展示的关键字
+    - title: 图的标题
+    - legend: 指定图例
 
 （1）绘制一些运行的分类损失。
 
@@ -67,11 +66,11 @@ python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
 
 预期输出将如下所示。
 
------Analyze train time of work_dirs/some_exp/20190611_192040.log.json-----
-slowest epoch 11, average time is 1.2024
-fastest epoch 1, average time is 1.1909
-time std over epochs is 0.0028
-average iter time: 1.1959 s/iter
+    -----Analyze train time of work_dirs/some_exp/20190611_192040.log.json-----
+    slowest epoch 11, average time is 1.2024
+    fastest epoch 1, average time is 1.1909
+    time std over epochs is 0.0028
+    average iter time: 1.1959 s/iter
 
 
 
