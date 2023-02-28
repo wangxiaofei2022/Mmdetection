@@ -27,9 +27,16 @@
 ![image](https://github.com/wangxiaofei2022/Mmdetection/blob/main/AP_AR值.png)
 
 3.绘制每个类别bbox 的结果曲线图并保存
-（1）先使用 test.py 生成输出 results.bbox.json 文件
+（1）先使用 test.py 生成输出 results.bbox.json 文件，生成的results.bbox.json在mmdetection1/目录下
 
 **python tools/test.py  configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth --format-only --options "jsonfile_prefix=./results"**
 
+（2）获得COCO bbox错误结果每个类别，保存分析结果图像到目录results/
+
+**python tools/analysis_tools/coco_error_analysis.py results.bbox.json results --ann=/data/wangxiaofei/mmdetection1/data/coco/annotations/instances_val2017.json**
+
+- results.bbox.json:上一步生成的文件
+- results: 结果曲线图的生成目录, 此处将生成到results/ 目录下
+- --ann=xxx.json: 指定数据集的标注文件, 需要修改成你自己的, 默认为 data/coco/annotations/instances_val2017.json, 用的是官方的
 
 
