@@ -73,7 +73,7 @@ python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
     time std over epochs is 0.0028
     average iter time: 1.1959 s/iter
 
-# 三.运行过程中遇到的bug
+# 三.运行过程中遇到的Bug
 
 1.运行CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/swin/mask_rcnn_swin-t-p4-w7_fpn_1x_coco.py work_dirs/swin/epoch_24.pth  --eval bbox时遇到的问题：
 
@@ -108,32 +108,6 @@ https://github.com/open-mmlab/mmdetection/issues/4243
                 ann_file='path/to/your/test/data',
                 ...))
         ...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
