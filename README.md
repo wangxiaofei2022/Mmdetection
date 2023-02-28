@@ -11,9 +11,9 @@
 # 二.Mmdetection中的问题
 ## 2.1.批量检测图片的过程 
 
-1.  将多张图片和对应的含所有标签信息的instances_val2017.json文件分别放到mmdetection1/data/coco/val2017/和mmdetection1/data/coco/annotations/
+1.将多张图片和对应的含所有标签信息的instances_val2017.json文件分别放到mmdetection1/data/coco/val2017/和mmdetection1/data/coco/annotations/
 
-2.  使用coco 评估标准计算所有类别 bbox_mAP50, 75, 95, bbox_mAP_s/m/l的值可以通过以下两种语句
+2.使用coco 评估标准计算所有类别 bbox_mAP50, 75, 95, bbox_mAP_s/m/l的值可以通过以下两种语句
 
 （1）直接运行**CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth  --eval bbox**即可得到相应指标结果
 
@@ -27,7 +27,7 @@
 
 ![image](https://github.com/wangxiaofei2022/Mmdetection/blob/main/AP_AR值.png)
 
-3.  绘制每个类别bbox 的结果曲线图并保存
+3.绘制每个类别bbox 的结果曲线图并保存
 
 （1）先使用 test.py 生成输出 results.bbox.json 文件，生成的results.bbox.json在mmdetection1/目录下
 
@@ -41,7 +41,7 @@
     results: 结果曲线图的生成目录, 此处将生成到results/ 目录下
     --ann=xxx.json: 指定数据集的标注文件, 需要修改成你自己的, 默认为 data/coco/annotations/instances_val2017.json, 用的是官方的
 
-4.  关于分析日志的工具（暂未测试）
+4.关于分析日志的工具（暂未测试）
 
 python tools/analyze_logs.py plot_curve [--keys ${KEYS}] [--title ${TITLE}] [--legend ${LEGEND}] [--backend ${BACKEND}] [--style ${STYLE}] [--out ${OUT_FILE}]
 
@@ -72,7 +72,7 @@ python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
     fastest epoch 1, average time is 1.1909
     time std over epochs is 0.0028
     average iter time: 1.1959 s/iter
-
+5.
 
 
 
