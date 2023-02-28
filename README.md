@@ -1,4 +1,5 @@
 # 一.Mmdetection常用命令语句
+
 1.统计当前目录下文件的个数（不包括目录）：ls -l | grep "^-" | wc -l
 
 统计当前目录下文件的个数（包括子目录）：ls -lR| grep "^-" | wc -l
@@ -27,6 +28,7 @@
 ![image](https://github.com/wangxiaofei2022/Mmdetection/blob/main/AP_AR值.png)
 
 3.绘制每个类别bbox 的结果曲线图并保存
+
 （1）先使用 test.py 生成输出 results.bbox.json 文件，生成的results.bbox.json在mmdetection1/目录下
 
 **python tools/test.py  configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth --format-only --options "jsonfile_prefix=./results"**
@@ -38,5 +40,33 @@
 - results.bbox.json:上一步生成的文件
 - results: 结果曲线图的生成目录, 此处将生成到results/ 目录下
 - --ann=xxx.json: 指定数据集的标注文件, 需要修改成你自己的, 默认为 data/coco/annotations/instances_val2017.json, 用的是官方的
+
+4.  关于分析日志的工具（暂未测试）
+python tools/analyze_logs.py plot_curve [--keys ${KEYS}] [--title ${TITLE}] [--legend ${LEGEND}] [--backend ${BACKEND}] [--style ${STYLE}] [--out ${OUT_FILE}]
+- keys: 要展示的关键字
+- title: 图的标题
+- legend: 指定图例
+
+（1）绘制一些运行的分类损失。
+python tools/analysis_tools/analyze_logs.py plot_curve log.json --keys loss_cls --legend loss_cls
+
+（2）绘制一些运行的分类和回归损失，并将该图保存为pdf。
+python tools/analysis_tools/analyze_logs.py plot_curve log.json --keys loss_cls loss_reg --out losses.pdf
+
+（3）比较同一图中两次运行的bbox mAP。
+python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys bbox_mAP --legend run1 run2
+
+（4）计算平均训练速度。
+python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
+预期输出将如下所示。
+-----Analyze train time of work_dirs/some_exp/20190611_192040.log.json-----
+slowest epoch 11, average time is 1.2024
+fastest epoch 1, average time is 1.1909
+time std over epochs is 0.0028
+average iter time: 1.1959 s/iter
+
+
+
+
 
 
