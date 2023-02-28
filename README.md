@@ -27,4 +27,9 @@
 ![image](https://github.com/wangxiaofei2022/Mmdetection/blob/main/AP_AR值.png)
 
 3.绘制每个类别bbox 的结果曲线图并保存
-2.1 先使用 test.py 生成输出 results.bbox.json 文件
+（1）先使用 test.py 生成输出 results.bbox.json 文件
+
+**python tools/test.py  configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py work_dirs/faster-rcnn/epoch_12.pth --format-only --options "jsonfile_prefix=./results"**
+
+
+
