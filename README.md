@@ -77,8 +77,12 @@ python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
 
 1.运行CUDA_VISIBLE_DEVICES=7 python tools/test.py configs/swin/mask_rcnn_swin-t-p4-w7_fpn_1x_coco.py work_dirs/swin/epoch_24.pth  --eval bbox时遇到的问题：
 
+![image](https://github.com/wangxiaofei2022/Mmdetection/blob/main/IndexError_list_index_out_of_range.png)
 
 解决办法：
+
+https://github.com/open-mmlab/mmdetection/issues/4243
+
 
 
 
