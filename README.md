@@ -83,6 +83,55 @@ python tools/analyze_logs.py cal_train_time ${CONFIG_FILE} [--include-outliers]
 
 https://github.com/open-mmlab/mmdetection/issues/4243
 
+将configs/_base_/datasets/目录下的**coco_detection.py**和**coco_instance.py**添加classes = ('car', 'truck')  classes=classes,
+
+        ...
+        dataset_type = 'CocoDataset'
+        classes = ('car', 'truck')
+        ...
+        data = dict(
+            samples_per_gpu=2,
+            workers_per_gpu=2,
+            train=dict(
+                type=dataset_type,
+                classes=classes,
+                ann_file='path/to/your/train/data',
+                ...),
+            val=dict(
+                type=dataset_type,
+                classes=classes,
+                ann_file='path/to/your/val/data',
+                ...),
+            test=dict(
+                type=dataset_type,
+                classes=classes,
+                ann_file='path/to/your/test/data',
+                ...))
+        ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
