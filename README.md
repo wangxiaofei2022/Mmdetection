@@ -6,7 +6,9 @@
 
 看某目录下文件夹(目录)的个数（包括子目录）：s -lR | grep "^d" | wc
 
-2.python安装包下载的慢可以用镜像：**pip install opencv-python -i https://mirrors.aliyun.com/pypi/simple**
+2.python安装包下载的慢可以用镜像：
+
+    pip install opencv-python -i https://mirrors.aliyun.com/pypi/simple
 
 # 二.Mmdetection应用
 ## 2.1 批量检测图片的过程 
