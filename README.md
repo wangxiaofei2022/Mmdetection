@@ -6,6 +6,10 @@
 
 看某目录下文件夹(目录)的个数（包括子目录）：s -lR | grep "^d" | wc
 
+查看目录下文件夹大小：du -sh *
+
+查看目录下文件大小：ls  -lht
+
 2.python安装包下载的慢可以用镜像：
 
     pip install opencv-python -i https://mirrors.aliyun.com/pypi/simple
